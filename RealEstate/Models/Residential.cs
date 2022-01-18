@@ -24,7 +24,10 @@ namespace RealEstate.Models
 
     public class Residential : IRealEstate
     {
-        public int ID { get ; set ; }
+
+       
+
+        public int RealEstateId { get ; set ; }
         public SellType SellType { get; set; }
         public double Square { get; set; }
         public Address Address { get; set; }
@@ -34,6 +37,7 @@ namespace RealEstate.Models
         public bool Balcony { get; set; }
         public bool Furnished { get; set; }
         public ResidentalType ResidentalType { get; set; }
+        public int AddressID { get; set; }
 
 
 
