@@ -1,7 +1,7 @@
 ﻿@model RealEstate.Models.AdvertResidential
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -48,6 +48,52 @@
                 @Html.DisplayFor(model => model.Explaination)
             </dd>
             <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.Square)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.Square)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.FloorNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.FloorNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.Heating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.Heating)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.Balcony)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.Balcony)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RealEstate.Furnished)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RealEstate.Furnished)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.User.FullName)
             </dt>
 
@@ -55,11 +101,11 @@
                 @Html.DisplayFor(model => model.User.FullName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.RealEstate.Heating)
+                @Html.DisplayNameFor(model => model.User.Email)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.RealEstate.Heating)
+                @Html.DisplayFor(model => model.User.Email)
             </dd>
 
 

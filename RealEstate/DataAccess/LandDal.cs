@@ -22,7 +22,8 @@ namespace RealEstate.DataAccess
         }
         public object Create(Land land)
         {
-            string query = $"Insert into Land (RealEstateId,ResidentalType,SellType,Square,Address,Age,FloorNumber,Heating,Balcony,Furnished) VALUES  ('{residential.RealEstateId}','{residential.ResidentalType}','{residential.SellType}','{residential.Square}','{residential.Address}','{residential.Age}','{residential.FloorNumber}','{residential.Heating}','{residential.Balcony}','{residential.Furnished}');select CAST(scope_identity() as int);";
+            string query = $"Insert into Land (RealEstateId,ZoningStatus,SellType,Square,AddressID,BlockNumber,ParcelNumber,SquarePrice) VALUES  ('{land.RealEstateId}','{land.ZoningStatus}','{land.SellType}'," +
+                $"'{land.Square}','{land.AddressID}','{land.BlockNumber}','{land.ParcelNumber}','{land.SquarePrice}');select CAST(scope_identity() as int);";
             object insertedsId = DbTools.Connection.Create(query);
             return insertedsId;
         }
@@ -39,12 +40,12 @@ namespace RealEstate.DataAccess
         }
         public bool Update(Land land)
         {
-            string query = $"Update Land set RealEstateID='{land.RealEstateId}',SellType='{residential.SellType}', Square='{residential.Square}',Age='{residential.RealEstateId}',FloorNumber='{residential.FloorNumber}',Heating='{residential.Heating}',Balcony='{residential.Balcony}',Furnished='{residential.Furnished}',ResidentialType='{residential.ResidentalType}',AddressID='{residential.AddressID}', where AddressID='{residential.AddressID}';";
+            string query = $"Update Land set RealEstateID='{land.RealEstateId}',SellType='{land.SellType}', Square='{land.Square}',AddressID='{land.AddressID}',BlockNumber='{land.BlockNumber}',ParcelNumber='{land.ParcelNumber}',SquarePrice='{land.SquarePrice}',ZoningStatus='{land.ZoningStatus}', where AddressID='{land.AddressID}';";
             return DbTools.Connection.Execute(query);
         }
         public bool Delete(Land land)
         {
-            string query = $"Delete from Land where Id ={residential.RealEstateId};";
+            string query = $"Delete from Land where Id ={land.RealEstateId};";
             return DbTools.Connection.Execute(query);
         }
 
@@ -54,5 +55,4 @@ namespace RealEstate.DataAccess
 }
 
 
-    }
-}
+ 

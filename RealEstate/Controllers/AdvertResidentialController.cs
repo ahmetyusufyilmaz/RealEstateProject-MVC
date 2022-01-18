@@ -21,16 +21,18 @@ namespace RealEstate.Controllers
         {
             Residential house = new Residential();
             house.RealEstateId = 1;
-            house.Square = 160;
-            house.Furnished = false;
+            house.Square = 160;        
             house.Heating = HeatingType.NaturalGas;
-
+            house.FloorNumber = 2;
+            house.Age = 4;
+            house.Balcony = true;
+            house.Furnished = false;
 
             User user = new User();
             user.Email = "test@test.com";
             user.FullName = "Test Testson";
 
-            AdvertResidential advertRes = new AdvertResidential() { AdvertiseId = 1, Date = DateTime.UtcNow, IsActive = true, Title = "Ankara'nın en yerinde ev", RealEstate = house, User = user };
+            AdvertResidential advertRes = new AdvertResidential() { AdvertiseId = 1, Date = DateTime.Today, IsActive = true, Title = "Ankara'nın en merkezi yerinde ev", RealEstate = house, User = user };
 
             return View(advertRes);
         }
