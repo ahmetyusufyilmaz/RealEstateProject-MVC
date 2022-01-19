@@ -22,6 +22,14 @@ namespace RealEstate.Models
         FarmHouse
     }
 
+    public enum AdvertType 
+    {
+    Residential,
+    Commercial,
+    Land
+    }
+
+
     public class Residential : IRealEstate
     {
 

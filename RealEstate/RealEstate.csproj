@@ -119,6 +119,9 @@
     <Compile Include="Controllers\AdvertCommercialController.cs" />
     <Compile Include="Controllers\AdvertLandController.cs" />
     <Compile Include="Controllers\AdvertResidentialController.cs" />
+    <Compile Include="DataAccess\AdvertCommericalDal.cs" />
+    <Compile Include="DataAccess\AdvertLandDal.cs" />
+    <Compile Include="DataAccess\AdvertResidentialDal.cs" />
     <Compile Include="DataAccess\CommercialDal.cs" />
     <Compile Include="DataAccess\DbTools.cs" />
     <Compile Include="DataAccess\LandDal.cs" />
@@ -166,6 +169,8 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AdvertResidential\Index.cshtml" />
+    <Content Include="Views\AdvertResidential\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

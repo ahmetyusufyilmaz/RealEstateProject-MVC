@@ -194,6 +194,51 @@ namespace RealEstate.DataAccess
             return commercials;
         }
 
+
+        public List<AdvertResidential> ReadAdvertResidential(string query)
+        {
+            List<AdvertResidential> advertResidentials = new List<AdvertResidential>();
+            SqlCommand cmd = new SqlCommand(query, con);
+            IDataReader reader;
+            try
+            {
+                ConnectDB();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    advertResidentials.Add(
+                        new AdvertResidential
+                        {
+                            AdvertType=(AdvertType)short.Parse(reader["AdvertType"].ToString()),
+                            AdvertiseId=int.Parse(reader["AdvertiseId"].ToString()),
+                            Date=DateTime.Parse(reader["Date"].ToString()),
+                            IsActive=bool.Parse(reader["IsActive"].ToString()),
+                            Title=reader["Title"].ToString(),
+                            Explaination= reader["Explaination"].ToString(),
+                            UserId =int.Parse(reader["UserId"].ToString()),
+                            ResidentialId =int.Parse(reader["ResidentialId"].ToString()),
+
+
+                        });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                DisconnectDB();
+
+            }
+            return advertResidentials;
+        }
+
+
+
+
         public bool Execute(string query)
         {
             SqlCommand cmd = new SqlCommand(query, con);

@@ -14,7 +14,10 @@ namespace RealEstate.Models
         public string Title { get ; set ; }
         public string Explaination { get ; set ; }
         public User User { get ; set ; }
+        public int UserId { get; set; }
         public Residential RealEstate { get ; set ; }
+        public int ResidentialId { get; set; }
+        public AdvertType AdvertType { get; set; }
        
     }
 }
