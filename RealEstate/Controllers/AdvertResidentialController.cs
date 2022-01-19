@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RealEstate.DataAccess;
 using RealEstate.Models;
+using RealEstate.Models.ViewModels;
 
 namespace RealEstate.Controllers
 {
@@ -12,16 +14,32 @@ namespace RealEstate.Controllers
         // GET: AdvertResidential
         public ActionResult Index()
         {
-            return View();
+            AdvertResidentialDal advertiesment = new AdvertResidentialDal(new ResidentialDal());
+            List<AdvertResidential> advertResidentials = advertiesment.GetAdvertResidentials();
+            List<AdverticeViewModel> adverticeViewModels = new List<AdverticeViewModel>();
 
+            advertResidentials.ForEach(ad =>
+                adverticeViewModels.Add(new AdverticeViewModel
+                {
+                    Date = ad.Date,
+                    IsActive = ad.IsActive,
+                    Title = ad.Title,
+                    Explaination = ad.Explaination,
+                    Msquare = ad.RealEstate.Msquare,
+                    Balcony = ad.RealEstate.Balcony,
+                    Furnished = ad.RealEstate.Furnished
+                })
+                  );
+            return View(adverticeViewModels);
         }
+
 
         // GET: AdvertResidential/Details/5
         public ActionResult Details() // int id parametresi eklenecek!!!
         {
             Residential house = new Residential();
-            house.RealEstateId = 1;
-            house.Square = 160;        
+            house.ResidentialId = 1;
+            house.Msquare = 160;        
             house.Heating = HeatingType.NaturalGas;
             house.FloorNumber = 2;
             house.Age = 4;

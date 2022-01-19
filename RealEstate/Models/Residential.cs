@@ -35,9 +35,9 @@ namespace RealEstate.Models
 
        
 
-        public int RealEstateId { get ; set ; }
+        public int ResidentialId { get ; set ; }
         public SellType SellType { get; set; }
-        public double Square { get; set; }
+        public double Msquare { get; set; }
         public Address Address { get; set; }
         public short Age { get; set; }
         public byte FloorNumber { get; set; }

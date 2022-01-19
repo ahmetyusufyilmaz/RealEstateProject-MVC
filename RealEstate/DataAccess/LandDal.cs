@@ -22,8 +22,8 @@ namespace RealEstate.DataAccess
         }
         public object Create(Land land)
         {
-            string query = $"Insert into Land (RealEstateId,ZoningStatus,SellType,Square,AddressID,BlockNumber,ParcelNumber,SquarePrice) VALUES  ('{land.RealEstateId}','{land.ZoningStatus}','{land.SellType}'," +
-                $"'{land.Square}','{land.AddressID}','{land.BlockNumber}','{land.ParcelNumber}','{land.SquarePrice}');select CAST(scope_identity() as int);";
+            string query = $"Insert into Land (RealEstateId,ZoningStatus,SellType,Square,AddressID,BlockNumber,ParcelNumber,SquarePrice) VALUES  ('{land.ResidentialId}','{land.ZoningStatus}','{land.SellType}'," +
+                $"'{land.Msquare}','{land.AddressID}','{land.BlockNumber}','{land.ParcelNumber}','{land.SquarePrice}');select CAST(scope_identity() as int);";
             object insertedsId = DbTools.Connection.Create(query);
             return insertedsId;
         }
@@ -40,12 +40,12 @@ namespace RealEstate.DataAccess
         }
         public bool Update(Land land)
         {
-            string query = $"Update Land set RealEstateID='{land.RealEstateId}',SellType='{land.SellType}', Square='{land.Square}',AddressID='{land.AddressID}',BlockNumber='{land.BlockNumber}',ParcelNumber='{land.ParcelNumber}',SquarePrice='{land.SquarePrice}',ZoningStatus='{land.ZoningStatus}', where AddressID='{land.AddressID}';";
+            string query = $"Update Land set ResidentialId='{land.ResidentialId}',SellType='{land.SellType}', Square='{land.Msquare}',AddressID='{land.AddressID}',BlockNumber='{land.BlockNumber}',ParcelNumber='{land.ParcelNumber}',SquarePrice='{land.SquarePrice}',ZoningStatus='{land.ZoningStatus}', where AddressID='{land.AddressID}';";
             return DbTools.Connection.Execute(query);
         }
         public bool Delete(Land land)
         {
-            string query = $"Delete from Land where Id ={land.RealEstateId};";
+            string query = $"Delete from Land where ResidentialId ={land.ResidentialId};";
             return DbTools.Connection.Execute(query);
         }
 

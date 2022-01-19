@@ -18,9 +18,9 @@ namespace RealEstate.Models
 
     public class Land : IRealEstate
     {
-        public int RealEstateId { get ; set ; }
+        public int ResidentialId { get ; set ; }
         public SellType SellType { get ; set ; }
-        public double Square { get ; set ; }
+        public double Msquare { get ; set ; }
         public int AddressID { get; set; }
         public Address Address { get ; set ; }
         public int BlockNumber { get; set; }

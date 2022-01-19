@@ -22,31 +22,31 @@ namespace RealEstate.DataAccess
         }
         public object Create(Residential residential)
         {
-            string query = $"Insert into Residental (RealEstateId,ResidentalType,SellType,Square,Address,Age,FloorNumber,Heating,Balcony,Furnished) VALUES  ('{residential.RealEstateId}'," +
-                $"'{residential.ResidentalType}','{residential.SellType}','{residential.Square}','{residential.Address}','{residential.Age}','{residential.FloorNumber}'," +
+            string query = $"Insert into Residential (RealEstateId,ResidentalType,SellType,Square,Address,Age,FloorNumber,Heating,Balcony,Furnished) VALUES  ('{residential.ResidentialId}'," +
+                $"'{residential.ResidentalType}','{residential.SellType}','{residential.Msquare}','{residential.Address}','{residential.Age}','{residential.FloorNumber}'," +
                 $"'{residential.Heating}','{residential.Balcony}','{residential.Furnished}');select CAST(scope_identity() as int);";
             object insertedsId = DbTools.Connection.Create(query);
             return insertedsId;
         }
         public List<Residential> GetResidential()
         {
-            string query = "select * from Residental";
+            string query = "select * from Residential";
 
             return DbTools.Connection.ReadResidentials(query);
         }
         public Residential GetResidentialById(int id)
         {
-            string query = $"select * from Residental where ID ={id};";
+            string query = $"select * from Residential where ID ={id};";
             return DbTools.Connection.ReadResidentials(query)[0];
         }
         public bool Update(Residential residential)
         {
-            string query = $"Update Residental set RealEstateID='{residential.RealEstateId}',SellType='{residential.SellType}', Square='{residential.Square}',Age='{residential.RealEstateId}',FloorNumber='{residential.FloorNumber}',Heating='{residential.Heating}',Balcony='{residential.Balcony}',Furnished='{residential.Furnished}',ResidentialType='{residential.ResidentalType}',AddressID='{residential.AddressID}', where AddressID='{residential.AddressID}';";
+            string query = $"Update Residential set RealEstateID='{residential.ResidentialId}',SellType='{residential.SellType}', Square='{residential.Msquare}',Age='{residential.ResidentialId}',FloorNumber='{residential.FloorNumber}',Heating='{residential.Heating}',Balcony='{residential.Balcony}',Furnished='{residential.Furnished}',ResidentialType='{residential.ResidentalType}',AddressID='{residential.AddressID}', where AddressID='{residential.AddressID}';";
             return DbTools.Connection.Execute(query);
         }
         public bool Delete(Residential residential)
         {
-            string query = $"Delete from Residental where Id ={residential.RealEstateId};";
+            string query = $"Delete from Residential where Id ={residential.ResidentialId};";
             return DbTools.Connection.Execute(query);
         }
 

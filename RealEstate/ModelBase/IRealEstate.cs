@@ -15,9 +15,9 @@ namespace RealEstate.ModelBase
 
     public interface IRealEstate
     {
-        int RealEstateId { get; set; }
+        int ResidentialId { get; set; }
         SellType SellType { get; set; }
-        double Square { get; set; }
+        double Msquare { get; set; }
         Address Address { get; set; }
 
         
