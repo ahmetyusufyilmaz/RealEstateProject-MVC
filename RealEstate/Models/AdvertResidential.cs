@@ -18,10 +18,7 @@ namespace RealEstate.Models
         public Residential RealEstate { get ; set ; }
         public int ResidentialId { get; set; }
         public AdvertType AdvertType { get; set; }
-
-
-
-        
-        
+        public HttpPostedFileBase Foto { get; set; }
+        public string FotoAdres { get; set; }
     }
 }

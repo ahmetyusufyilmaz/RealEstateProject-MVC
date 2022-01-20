@@ -15,5 +15,7 @@ namespace RealEstate.Models
         public string Explaination { get ; set ; }
         public User User { get ; set ; }
         public Land RealEstate { get; set; }
+        public HttpPostedFileBase Foto { get ; set ; }
+        public string FotoAdres { get ; set ; }
     }
 }

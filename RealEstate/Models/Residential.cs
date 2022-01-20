@@ -47,6 +47,9 @@ namespace RealEstate.Models
         public ResidentalType ResidentalType { get; set; }
         public int AddressID { get; set; }
 
+        public HttpPostedFileBase Foto { get; set; }
+        public string FotoAdres { get; set; }
+
 
 
     }

@@ -22,9 +22,9 @@ namespace RealEstate.DataAccess
         }
         public object Create(Residential residential)
         {
-            string query = $"Insert into Residential (RealEstateId,ResidentalType,SellType,Square,Address,Age,FloorNumber,Heating,Balcony,Furnished) VALUES  ('{residential.ResidentialId}'," +
+            string query = $"Insert into Residential (RealEstateId,ResidentalType,SellType,Square,Address,Age,FloorNumber,Heating,Balcony,Furnished,FotoAdres) VALUES  ('{residential.ResidentialId}'," +
                 $"'{residential.ResidentalType}','{residential.SellType}','{residential.Msquare}','{residential.Address}','{residential.Age}','{residential.FloorNumber}'," +
-                $"'{residential.Heating}','{residential.Balcony}','{residential.Furnished}');select CAST(scope_identity() as int);";
+                $"'{residential.Heating}','{residential.Balcony}','{residential.Furnished}','{residential.FotoAdres}');select CAST(scope_identity() as int);";
             object insertedsId = DbTools.Connection.Create(query);
             return insertedsId;
         }
@@ -41,7 +41,7 @@ namespace RealEstate.DataAccess
         }
         public bool Update(Residential residential)
         {
-            string query = $"Update Residential set RealEstateID='{residential.ResidentialId}',SellType='{residential.SellType}', Square='{residential.Msquare}',Age='{residential.ResidentialId}',FloorNumber='{residential.FloorNumber}',Heating='{residential.Heating}',Balcony='{residential.Balcony}',Furnished='{residential.Furnished}',ResidentialType='{residential.ResidentalType}',AddressID='{residential.AddressID}', where AddressID='{residential.AddressID}';";
+            string query = $"Update Residential set RealEstateID='{residential.ResidentialId}',SellType='{residential.SellType}', Square='{residential.Msquare}',Age='{residential.ResidentialId}',FloorNumber='{residential.FloorNumber}',Heating='{residential.Heating}',Balcony='{residential.Balcony}',Furnished='{residential.Furnished}',ResidentialType='{residential.ResidentalType}',AddressID='{residential.AddressID}',FotoAdres='{residential.FotoAdres}' where AddressID='{residential.AddressID}';";
             return DbTools.Connection.Execute(query);
         }
         public bool Delete(Residential residential)

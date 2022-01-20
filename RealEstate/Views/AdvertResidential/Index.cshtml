@@ -14,10 +14,15 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create", new {  }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-success" })
     </p>
+
+
+
     <table class="table">
         <tr>
+           
+               
             <th>
                 @Html.DisplayNameFor(model => model.UserId)
             </th>
@@ -45,7 +50,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.AdvertType)
             </th>
-           
+
 
 
             <th></th>
@@ -53,44 +58,44 @@
 
         @foreach (var item in Model)
         {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem =>item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Explaination)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Msquare)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Balcony)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Furnished)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdvertType)
-        </td>
-       
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <b>   @Html.DisplayFor(modelItem => item.Title)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Explaination)
+                </td>
+                <td>
+                    <b>  @Html.DisplayFor(modelItem => item.Msquare)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Balcony)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Furnished)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdvertType)
+                </td>
 
 
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ResidentialId }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ResidentialId }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ResidentialId }, new { @class = "btn btn-warning" })
-        </td>
-    </tr>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ResidentialId }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ResidentialId }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ResidentialId }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
         }
 
     </table>

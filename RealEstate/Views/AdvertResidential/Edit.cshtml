@@ -1,0 +1,195 @@
+﻿@model RealEstate.Models.ViewModels.AdverticeViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Edit</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.AdvertType, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.AdvertType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.IsActive)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.UserId)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Explaination, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Explaination, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Explaination, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Msquare, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Msquare, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Msquare, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Balcony, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Balcony)
+                    @Html.ValidationMessageFor(model => model.Balcony, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.Furnished, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.Furnished)
+                    @Html.ValidationMessageFor(model => model.Furnished, "", new { @class = "text-danger" })
+                </span>
+            </div>
+
+        </div>
+        <div class="row container-md text-center m-auto form-group mt-2">
+
+            <div class="col-3 text-start">
+                <span>
+                    @Html.LabelFor(model => model.AddressId, htmlAttributes: new { @class = "control-label col-md-2" })
+                </span>
+            </div>
+
+            <div class="col-6 text-start">
+                <span>
+                    @Html.EditorFor(model => model.AddressId)
+                    @Html.ValidationMessageFor(model => model.Furnished, "", new { @class = "text-danger" })
+                </span>
+            </div>
+            
+
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

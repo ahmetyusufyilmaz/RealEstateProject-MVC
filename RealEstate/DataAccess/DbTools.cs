@@ -153,7 +153,8 @@ namespace RealEstate.DataAccess
                                 Balcony = bool.Parse(reader["Balcony"].ToString()),
                                 Furnished = bool.Parse(reader["Furnished"].ToString()),
                                 AddressID = int.Parse(reader["AddressID"].ToString()),
-                                ResidentalType = (ResidentalType)Convert.ToInt16(reader["ResidentialType"].ToString())
+                                ResidentalType = (ResidentalType)Convert.ToInt16(reader["ResidentialType"].ToString()),
+                                FotoAdres = reader["FotoAdres"].ToString()
                             },
 
                             ResidentialId = int.Parse(reader["ResidentialId"].ToString()),
@@ -204,6 +205,7 @@ namespace RealEstate.DataAccess
                             Furnished = bool.Parse(reader["Furnished"].ToString()),
                             AddressID = int.Parse(reader["AddressID"].ToString()),
                             ResidentalType = (ResidentalType)short.Parse(reader["ResidentialType"].ToString()),
+                            FotoAdres = reader["FotoAdres"].ToString()
                         }
                         );
                 }
@@ -324,6 +326,11 @@ namespace RealEstate.DataAccess
                 return true;
             else
                 return false;
+        }
+
+        internal List<User> ReadUsers(string query)
+        {
+            throw new NotImplementedException();
         }
     }
 }
