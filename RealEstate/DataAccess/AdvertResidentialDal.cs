@@ -64,7 +64,11 @@ namespace RealEstate.DataAccess
         //    string query = $"Delete from Adverts where AdvertiseId ={advertResidential.AdvertiseId};";
         //    return DbTools.Connection.Execute(query);
         //}
-
+        public List<AdvertResidential> Search(string word)
+        {
+            string query = $"SELECT * FROM Residential WHERE Title LIKE '%{word}%' OR Explanation LIKE '%{word}';";
+            return DbTools.Connection.ReadAdvertResidentials(query);
+        }
 
     }
 }

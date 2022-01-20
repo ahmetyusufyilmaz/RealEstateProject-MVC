@@ -119,6 +119,7 @@
     <Compile Include="Controllers\AdvertCommercialController.cs" />
     <Compile Include="Controllers\AdvertLandController.cs" />
     <Compile Include="Controllers\AdvertResidentialController.cs" />
+    <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="DataAccess\AdvertCommericalDal.cs" />
     <Compile Include="DataAccess\AdvertLandDal.cs" />
     <Compile Include="DataAccess\AdvertResidentialDal.cs" />
@@ -172,6 +173,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\AdvertResidential\Index.cshtml" />
     <Content Include="Views\AdvertResidential\Create.cshtml" />
+    <Content Include="Views\AdvertResidential\Login.cshtml" />
+    <Content Include="Views\AdvertResidential\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,6 +186,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\AdvertCommercial\" />
     <Folder Include="Views\AdvertLand\" />
+    <Folder Include="Views\Deneme\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

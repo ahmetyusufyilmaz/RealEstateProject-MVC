@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using RealEstate.DataAccess;
 using RealEstate.Models;
 using RealEstate.Models.ViewModels;
@@ -18,18 +19,22 @@ namespace RealEstate.Controllers
             List<AdvertResidential> advertResidentials = advertiesment.GetAdvertResidentials();
             List<AdverticeViewModel> adverticeViewModels = new List<AdverticeViewModel>();
 
-            advertResidentials.ForEach(ad =>
+            advertResidentials.ForEach(advert =>
                 adverticeViewModels.Add(new AdverticeViewModel
                 {
-                    Date = ad.Date,
-                    IsActive = ad.IsActive,
-                    Title = ad.Title,
-                    Explaination = ad.Explaination,
-                    Msquare = ad.RealEstate.Msquare,
-                    Balcony = ad.RealEstate.Balcony,
-                    Furnished = ad.RealEstate.Furnished
+                    Date = advert.Date,
+                    IsActive = advert.IsActive,
+                    Title = advert.Title,
+                    Explaination = advert.Explaination,
+                    Msquare = advert.RealEstate.Msquare,
+                    Balcony = advert.RealEstate.Balcony,
+                    Furnished = advert.RealEstate.Furnished,
+                    UserId=advert.UserId,
+                    AdvertType = advert.AdvertType,
+                    Heating=advert.RealEstate.Heating
+
                 })
-                  );
+                  );;
             return View(adverticeViewModels);
         }
 
@@ -120,5 +125,26 @@ namespace RealEstate.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        public ActionResult Login(string username, string password)
+        {
+            if (username == "admin" && password == "admin123")
+            {
+                FormsAuthentication.SetAuthCookie("admin", false);
+                return RedirectToAction("Create");
+            }
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public ActionResult Search(string arananKelime)
+        {
+            List<AdvertResidential> residentials = new List<AdvertResidential>();
+            residentials = AdvertResidentialDal.Current.Search(arananKelime);
+
+            //TempData["arananKelime"] = arananKelime;
+            return View(residentials);
+        }
+     
     }
 }

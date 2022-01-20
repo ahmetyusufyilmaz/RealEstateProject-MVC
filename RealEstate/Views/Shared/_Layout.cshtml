@@ -9,8 +9,9 @@
 </head>
 <body>
     <main class="container-fluid bg-light p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" style="background-color:yellow; color:black;" href="/Ogrenci/Index"><b> FromTheOwner.com </b></a>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black;margin-bottom:20px;">
+            <img src="https://img.icons8.com/color-glass/38/000000/home.png" />
+            <a class="navbar-brand" style=" color: yellow;" href="/AdvertResidential/Index"><b> FromTheOwner.com </b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -18,40 +19,40 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" style="background-color:yellow; color:black;" href="/Ogrenci/Index">Residential<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" style="font-family:'Arial Rounded MT'; background-color: yellow; color: black; margin-left: 10px; border: 1px solid black;" href="/AdvertResidential/Index"><b>Residential</b><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="background-color:yellow; color:black;margin-left:8px" href="/Ogretmen/Index">Land</a>
+                        <a class="nav-link" style="font-family: 'Arial Rounded MT'; background-color: yellow; color: black; margin-left: 8px; border: 1px solid black; " href="/AdvertLand/Index"><b>Land</b></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="background-color: yellow; color: black; margin-left: 8px" href="/Ogretmen/Index">Commercial</a>
+                        <a class="nav-link" style="font-family: 'Arial Rounded MT'; background-color: yellow; color: black; margin-left: 8px; border: 1px solid black; " href="/AdvertCommercial/Index"><b>Commercial</b></a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0" action="@ViewBag.AraAdres" method="post">
                     <input name="arananKelime" class="form-control mr-sm-3" type="search" placeholder="Advanced Search" aria-label="Search">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn  my-2 my-sm-0" style="background-color:lightgray;"  type="submit">Search</button>
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;margin-left:100px;" href="/Ogrenci/Index">Sign In |<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" style="color:white;margin-left:100px;" href="/AdvertResidential/Login"><b>Sign In&#160;&#160;&#160;|</b> <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white" href="/Ogrenci/Index"> Sign Up<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" style="color:white" href="/AdvertResidential/Login"> <b> Sign Up</b> <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-warning my-2 my-sm-0" href="/AdvertResidential/Create" style="background-color:blue;color:white;margin-right:15px" type="submit">Post Free Ad*</button>
+                <button class="btn btn-outline-warning my-2 my-sm-0" style="font-family: 'Arial Rounded MT'; background-color: blue; margin-right: 15px" type="submit"> <a href="/AdvertResidential/Create" style="color: white; text-decoration: none;">Post Free Ad</a></button>
 
             </div>
         </nav>
 
-          
+
         @RenderBody()
     </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <a href="https://icons8.com/icon/119161/home"></a>
 
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>

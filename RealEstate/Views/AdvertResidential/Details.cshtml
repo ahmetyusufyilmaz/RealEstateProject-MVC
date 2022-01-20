@@ -112,8 +112,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ResidentialId }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Back to List", "Index", new { id = Model.ResidentialId }, new { @class = "btn btn-info" })
     </p>
 </body>
 </html>

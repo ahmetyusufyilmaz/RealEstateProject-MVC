@@ -136,8 +136,8 @@ namespace RealEstate.DataAccess
 
                         new AdvertResidential
                         {
-                            AdvertiseId = int.Parse(reader["AdvertiseId"].ToString()),
-                            //Date = DateTime.Parse(reader["Date"].ToString()),
+                            AdvertiseId = Convert.ToInt32(reader["AdvertiseId"].ToString()),
+                            Date = DateTime.Parse(reader["Date"].ToString()),
                             IsActive = bool.Parse(reader["IsActive"].ToString()),
                             Title = reader["Title"].ToString(),
                             Explaination = reader["Explanation"].ToString(),
